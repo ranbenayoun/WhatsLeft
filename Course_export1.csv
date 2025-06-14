@@ -1,0 +1,176 @@
+﻿course_number,name_hebrew,credits,course_type,majors,is_core_in_major,id,created_date,updated_date,created_by_id,created_by,is_sample
+3360325,אולטרסאונד ברפואה,2.5,elective,"[""""imaging_signals"""",""""medical_biophysics""""]",FALSE,684b5153efd6147ccbbb6f34,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360533,אופטיקה ופוטוניקה,3,elective,"[""""medical_biophysics""""]",FALSE,684b5153efd6147ccbbb6f6e,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+2340202,אותות אקראיים,3,elective,"[""""imaging_signals""""]",FALSE,684b5153efd6147ccbbb6f44,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+044131,אותות ומערכות,5,mandatory,[],FALSE,684b4a100f83407d0c4c5864,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+2760413,אימונולוגיה בסיסית,3,elective,"[""""tissue_biomaterials""""]",FALSE,684b5153efd6147ccbbb6f6c,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+104065,אלגברה 1מ',5,mandatory,[],FALSE,684b4431efd6147ccbbb6916,12/06/2025 21:18,12/06/2025 21:18,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+104065,אלגברה 1מ2,5,mandatory,[],FALSE,684b4a100f83407d0c4c5852,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+104038,אלגברה 2מ',2.5,mandatory,[],FALSE,684b4431efd6147ccbbb691c,12/06/2025 21:18,12/06/2025 21:18,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+2360746,אלגוריתמים ויישומים בראייה ממוחשבת,3,elective,"[""""imaging_signals""""]",FALSE,684b5153efd6147ccbbb6f4c,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+0360076,אלקטרו קינטיקה בננו ומיקרו-זרימה,3,elective,"[""""biomechanics_flow""""]",FALSE,684b5153efd6147ccbbb6f59,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+114246,אלקטרומגנטיות,5,mandatory,[],FALSE,684b4a100f83407d0c4c5882,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+274257,אנטומיה א,6,mandatory,[],FALSE,684b4a100f83407d0c4c5887,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+274266,אנטומיה ב,6,mandatory,[],FALSE,684b4a100f83407d0c4c5889,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+034033,אנליזה נומרית,3,elective,"[""""biomechanics_flow""""]",FALSE,684b4431efd6147ccbbb6952,12/06/2025 21:18,12/06/2025 21:18,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+1030033,אנליזה נומרית מ',3,elective,"[""""imaging_signals"""",""""biomechanics_flow""""]",FALSE,684b5153efd6147ccbbb6f41,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+0340033,אנליזה נומרית מ׳,3,elective,"[""""imaging_signals"""",""""biomechanics_flow""""]",FALSE,684b4c3801e810ca5e3f2444,12/06/2025 21:52,12/06/2025 21:52,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+044102,בטיחות במעבדות חשמל,0,mandatory,[],FALSE,684b4a100f83407d0c4c5851,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360517,ביו-הנדסה של התא,2.5,elective,"[""""biomechanics_flow"""",""""tissue_biomaterials""""]",FALSE,684b5153efd6147ccbbb6f50,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360517,ביו-הנדסה של התא,2.5,elective,"[""""biomechanics_flow"""",""""tissue_biomaterials""""]",FALSE,684b4c3801e810ca5e3f2453,12/06/2025 21:52,12/06/2025 21:52,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+0660333,ביו-רוקחות,2.5,elective,"[""""tissue_biomaterials""""]",FALSE,684b5153efd6147ccbbb6f65,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+274241,ביוכימיה כללית,4.5,mandatory,[],FALSE,684b4a100f83407d0c4c5886,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+134058,ביולוגיה 1,3,mandatory,[],FALSE,684b4a100f83407d0c4c5856,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+1340141,ביולוגיה חישובית,2.5,elective,"[""""medical_biophysics""""]",FALSE,684b5153efd6147ccbbb6f73,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+1260304,ביולוגיה מבנית,2,elective,"[""""medical_biophysics""""]",FALSE,684b5153efd6147ccbbb6f72,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+1340082,ביולוגיה מולקולרית,2.5,elective,"[""""tissue_biomaterials"""",""""medical_biophysics""""]",FALSE,684b5153efd6147ccbbb6f69,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+1340069,ביולוגיה של ההתפתחות,2.5,elective,"[""""tissue_biomaterials""""]",FALSE,684b5153efd6147ccbbb6f68,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+274167,ביולוגיה של התא,3.5,mandatory,[],FALSE,684b4a100f83407d0c4c5884,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+0360090,ביומכניקה וחישה מכנית של תאים,3,elective,"[""""biomechanics_flow"""",""""medical_biophysics""""]",FALSE,684b5153efd6147ccbbb6f5b,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360506,ביומכניקה שיקומית,2.5,elective,"[""""biomechanics_flow""""]",TRUE,684b5153efd6147ccbbb6f4f,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+336537,ביופיזיקה ונוירופיזיולוגיה למהנדסים,3,mandatory,[],FALSE,684b4a100f83407d0c4c5868,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360550,ביופיזיקה חישובית,2.5,elective,"[""""imaging_signals"""",""""biomechanics_flow"""",""""tissue_biomaterials"""",""""medical_biophysics""""]",FALSE,684b5153efd6147ccbbb6f40,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+1340156,ביופיזיקה מולקולרית,3,elective,"[""""medical_biophysics""""]",FALSE,684b5153efd6147ccbbb6f74,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+1160321,ביופיזיקה של התא,3,elective,"[""""medical_biophysics""""]",FALSE,684b5153efd6147ccbbb6f70,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+336537,ביופיסיקה ונוירופיסיולוגיה למהנדסים,3,mandatory,[],FALSE,684b4431efd6147ccbbb692c,12/06/2025 21:18,12/06/2025 21:18,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+116321,ביופיסיקה של התא,3,elective,"[""""medical_biophysics""""]",FALSE,684b4431efd6147ccbbb696b,12/06/2025 21:18,12/06/2025 21:18,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+1340119,בקרת הביטוי הגנטי,2.5,elective,"[""""tissue_biomaterials"""",""""medical_biophysics""""]",FALSE,684b5153efd6147ccbbb6f6a,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+114086,גלים,3.5,mandatory,[],FALSE,684b4a100f83407d0c4c5879,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+1340020,גנטיקה כללית,3.5,elective,"[""""tissue_biomaterials""""]",FALSE,684b5153efd6147ccbbb6f67,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+0660121,דיאגנוסטיקה רפואית,3,elective,"[""""tissue_biomaterials""""]",FALSE,684b5153efd6147ccbbb6f66,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360547,דימוי אופטי חישובי,2.5,elective,"[""""imaging_signals"""",""""medical_biophysics""""]",FALSE,684b4c3801e810ca5e3f2441,12/06/2025 21:52,12/06/2025 21:52,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360547,דימות אופטי חישובי,2.5,elective,"[""""imaging_signals"""",""""medical_biophysics""""]",FALSE,684b5153efd6147ccbbb6f3e,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+2160020,דימות מוח – תאוריה ופרקטיקה,2.5,faculty_elective,[],FALSE,684b5153efd6147ccbbb6f7f,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+0840225,דינמיקה,4,elective,"[""""biomechanics_flow""""]",FALSE,684b5153efd6147ccbbb6f5c,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360529,הנדסת רקמות ותחליפים ביולוגיים,2.5,elective,"[""""tissue_biomaterials""""]",FALSE,684b5153efd6147ccbbb6f61,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360539,זרימה במערכת הנשימה,2.5,elective,"[""""biomechanics_flow""""]",FALSE,684b5153efd6147ccbbb6f51,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360541,זרימה במערכת הקרדיוווסקולרית,2.5,elective,"[""""biomechanics_flow""""]",FALSE,684b4a100f83407d0c4c58a1,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+0360076,זרימה ואלקטרו-קינטיקה במיקרו-ננו,3,elective,"[""""biomechanics_flow""""]",FALSE,684b4a100f83407d0c4c58aa,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+0360086,זרימה ותופעות מעבר בהתקנים מיקרוניים,3,elective,"[""""biomechanics_flow""""]",FALSE,684b5153efd6147ccbbb6f5a,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+104042,"חדו""א 1מ'",5,mandatory,[],FALSE,684b4431efd6147ccbbb6917,12/06/2025 21:18,12/06/2025 21:18,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+104013,"חדו""א 2ת'",5.5,mandatory,[],FALSE,684b4431efd6147ccbbb691b,12/06/2025 21:18,12/06/2025 21:18,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+104042,חדו״א 1מ2,5,mandatory,[],FALSE,684b4a100f83407d0c4c5853,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360024,חדשנות רפואיות במודל ביודיזיין 1,3,faculty_elective,[],FALSE,684b4c3801e810ca5e3f247f,12/06/2025 21:52,12/06/2025 21:52,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360025,חדשנות רפואיות במודל ביודיזיין 2,3,faculty_elective,[],FALSE,684b4c3801e810ca5e3f2480,12/06/2025 21:52,12/06/2025 21:52,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360024,חדשנות רפואית במודל ביודיזיין 1,3,faculty_elective,[],FALSE,684b5153efd6147ccbbb6f7c,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360025,חדשנות רפואית במודל ביודיזיין 2,3,faculty_elective,[],FALSE,684b5153efd6147ccbbb6f7d,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+0360090,חישה מכנית על ידי תאים ביולוגיים,3,elective,"[""""medical_biophysics""""]",FALSE,684b4a100f83407d0c4c58d8,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+104214,טורי פוריה,2.5,mandatory,[],FALSE,684b4a100f83407d0c4c585e,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+2360332,טכנולוגיות האינטרנט של הדברים,2,elective,"[""""biomechanics_flow""""]",FALSE,684b5153efd6147ccbbb6f5d,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360549,טכניקות ריצוף DNA,3,elective,"[""""imaging_signals"""",""""biomechanics_flow"""",""""tissue_biomaterials"""",""""medical_biophysics""""]",FALSE,684b5153efd6147ccbbb6f3f,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360543,יזמות בהנדסה ביו-רפואית,2,elective,"[""""entrepreneurship""""]",FALSE,684b4a100f83407d0c4c58e6,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360543,יזמות בהנדסה ביו-רפואית,2,faculty_elective,[],FALSE,684b4c3801e810ca5e3f2481,12/06/2025 21:52,12/06/2025 21:52,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360023,יישומי אופטיקה ביו-רפואית,2.5,elective,"[""""medical_biophysics""""]",TRUE,684b5153efd6147ccbbb6f6d,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360405,יסודות הנדסיים בביולוגיה וביוטכנולוגיה,2.5,elective,"[""""tissue_biomaterials""""]",FALSE,684b5153efd6147ccbbb6f62,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+334221,יסודות של חומרים רפואיים,2.5,mandatory,[],FALSE,684b4a100f83407d0c4c5866,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+334011,יסודות תכן ביו-חשמלי,4,mandatory,[],FALSE,684b4a100f83407d0c4c586b,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+124801,כימיה אורגנית 1ב',2.5,mandatory,[],FALSE,684b4431efd6147ccbbb691f,12/06/2025 21:18,12/06/2025 21:18,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+125803,כימיה אורגנית לרפואנים,3,mandatory,[],FALSE,684b4a100f83407d0c4c5885,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+125001,כימיה כללית,3,mandatory,[],FALSE,684b4a100f83407d0c4c5855,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+124507,כימיה כללית ופיזיקלית לרפואה,5,mandatory,[],FALSE,684b4a100f83407d0c4c5883,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+124503,כימיה פיסיקלית 1ב',2.5,mandatory,[],FALSE,684b4431efd6147ccbbb6925,12/06/2025 21:18,12/06/2025 21:18,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+0460211,למידה עמוקה,3,elective,"[""""imaging_signals"""",""""medical_biophysics""""]",FALSE,684b502d507a33a5415655cb,12/06/2025 22:09,12/06/2025 22:09,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360028,למידה עמוקה ב-MRI,2,elective,"[""""imaging_signals"""",""""medical_biophysics""""]",FALSE,684b5153efd6147ccbbb6f32,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360209,למידה עמוקה לאותות פיזיולוגיים,2.5,elective,"[""""imaging_signals""""]",FALSE,684b5153efd6147ccbbb6f33,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+2360781,למידה עמוקה על מצאים חישוביים,3,elective,"[""""imaging_signals""""]",FALSE,684b4c3801e810ca5e3f2451,12/06/2025 21:52,12/06/2025 21:52,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+334274,מבוא לאנטומיה של האדם,2,mandatory,[],FALSE,684b4a100f83407d0c4c5863,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+2360523,מבוא לביואינפורמטיקה,2.5,elective,"[""""imaging_signals""""]",FALSE,684b5153efd6147ccbbb6f4d,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+134019,מבוא לביוכימיה ואנזימולוגיה,2.5,mandatory,[],FALSE,684b4a100f83407d0c4c5862,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360522,מבוא לבקרה במערכות ביו-רפואיות,3,elective,"[""""imaging_signals"""",""""biomechanics_flow""""]",FALSE,684b5153efd6147ccbbb6f31,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+104034,מבוא להסתברות ח',3.5,mandatory,[],FALSE,684b4431efd6147ccbbb6929,12/06/2025 21:18,12/06/2025 21:18,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+1250000,מבוא לכימיה קוונטית למהנדסים,4,elective,"[""""medical_biophysics""""]",FALSE,684b5153efd6147ccbbb6f71,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+234128,מבוא למדעי המחשב שפת פייתון,4,mandatory,[],FALSE,684b4431efd6147ccbbb6920,12/06/2025 21:18,12/06/2025 21:18,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+0440101,מבוא למערכות תכנה,3,elective,"[""""imaging_signals""""]",FALSE,684b502d507a33a5415655c4,12/06/2025 22:09,12/06/2025 22:09,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+334023,מבוא לסטטיסטיקה,3.5,mandatory,[],FALSE,684b4a100f83407d0c4c586f,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+0440198,מבוא לעיבוד ספרתי של אותות,3,elective,"[""""imaging_signals"""",""""medical_biophysics""""]",FALSE,684b502d507a33a5415655c5,12/06/2025 22:09,12/06/2025 22:09,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+0350001,מבוא לרובוטיקה,2.5,elective,"[""""biomechanics_flow""""]",FALSE,684b5153efd6147ccbbb6f55,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3340021,מגמות בהנדסה ביו-רפואית,1,faculty_elective,[],FALSE,684b4a100f83407d0c4c58ea,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+104220,"מד""ח ת'",2.5,mandatory,[],FALSE,684b4431efd6147ccbbb6924,12/06/2025 21:18,12/06/2025 21:18,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+104136,"מד""ר מ'",4,mandatory,[],FALSE,684b3d5e0f83407d0c4c5545,12/06/2025 20:49,12/06/2025 20:49,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+0640250,מדע וטכנולוגיה של ביו-חומרים,3,elective,"[""""medical_biophysics""""]",FALSE,684b5153efd6147ccbbb6f75,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360001,מחקר קליני ורגולציה במכשור רפואי,2,elective,"[""""entrepreneurship""""]",FALSE,684b4a100f83407d0c4c58e8,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+336026,מחקרים עדכניים,1,faculty_elective,[],FALSE,684b4431efd6147ccbbb697a,12/06/2025 21:18,12/06/2025 21:18,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360026,מחקרים עדכניים,1,faculty_elective,[],FALSE,684b4a100f83407d0c4c58ec,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3380002,מיעוץ קליני לפתרון,1,elective,"[""""entrepreneurship""""]",FALSE,684b4c3801e810ca5e3f2483,12/06/2025 21:52,12/06/2025 21:52,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+1340121,מיקרוביולוגיה ווירולוגיה,3,elective,"[""""tissue_biomaterials""""]",FALSE,684b5153efd6147ccbbb6f6b,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+114101,מכניקה אנליטית,4,mandatory,[],FALSE,684b4a100f83407d0c4c587b,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+334009,מכניקת זורמים ביולוגיים,4,mandatory,[],FALSE,684b4a100f83407d0c4c586a,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+334222,מכניקת מוצקים להנדסה ביו-רפואית,4,mandatory,[],FALSE,684b4a100f83407d0c4c5867,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360404,ממשקים ביואלקטרוניים,2.5,elective,"[""""imaging_signals"""",""""tissue_biomaterials"""",""""medical_biophysics""""]",FALSE,684b5153efd6147ccbbb6f35,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360404,ממשקים ביואלקטרוניים,2.5,elective,"[""""imaging_signals"""",""""tissue_biomaterials"""",""""medical_biophysics""""]",FALSE,684b4c3801e810ca5e3f2438,12/06/2025 21:52,12/06/2025 21:52,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+134113,מסלולים מטבוליים,3.5,mandatory,[],FALSE,684b4a100f83407d0c4c5869,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+335005,מעבדה 1 בהנדסה ביו-רפואית לפיזיקאים,1,mandatory,[],FALSE,684b4a100f83407d0c4c587e,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+335001,מעבדה בהנדסה ביו-רפואית 1,2,mandatory,[],FALSE,684b4431efd6147ccbbb6934,12/06/2025 21:18,12/06/2025 21:18,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+335002,מעבדה בהנדסה ביו-רפואית 2,2,mandatory,[],FALSE,684b3d5e0f83407d0c4c555e,12/06/2025 20:49,12/06/2025 20:49,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+335003,מעבדה בהנדסה ביו-רפואית 3,2,mandatory,[],FALSE,684b4431efd6147ccbbb6938,12/06/2025 21:18,12/06/2025 21:18,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+114020,מעבדה בפיזיקה 1מ,1.5,mandatory,[],FALSE,684b4a100f83407d0c4c5876,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+114021,מעבדה בפיזיקה 2מ,1.5,mandatory,[],FALSE,684b4a100f83407d0c4c5878,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+114037,מעבדה בפיזיקה 4מח,1.5,mandatory,[],FALSE,684b4a100f83407d0c4c5880,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+114035,מעבדה לפיזיקה 3,1.5,mandatory,[],FALSE,684b4a100f83407d0c4c587a,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360548,מעבדה לתכן מעגלים גנטיים,2,elective,"[""""tissue_biomaterials""""]",FALSE,684b5153efd6147ccbbb6f63,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3340019,מעבדה מתקדמת בה. ביו-רפואית 1,2,faculty_elective,[],FALSE,684b4f066236d9fe79c45360,12/06/2025 22:04,12/06/2025 22:04,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3340020,מעבדה מתקדמת בהנ. ביו-רפואית 2,2,faculty_elective,[],FALSE,684b4c3801e810ca5e3f247a,12/06/2025 21:52,12/06/2025 21:52,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360544,מעגלים גנטיים,2.5,elective,"[""""imaging_signals"""",""""tissue_biomaterials""""]",FALSE,684b5153efd6147ccbbb6f3b,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+0460195,מערכות למידה,3,elective,"[""""imaging_signals""""]",FALSE,684b4c3801e810ca5e3f2448,12/06/2025 21:52,12/06/2025 21:52,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360546,מערכות למידה בתחום הבריאות,3,elective,"[""""imaging_signals""""]",FALSE,684b4c3801e810ca5e3f2440,12/06/2025 21:52,12/06/2025 21:52,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+0460332,מערכות ראייה ושמיעה,3,elective,"[""""imaging_signals""""]",FALSE,684b502d507a33a5415655cc,12/06/2025 22:09,12/06/2025 22:09,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3340331,מפגשים עם התעשיה,1,faculty_elective,[],FALSE,684b5153efd6147ccbbb6f79,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3380002,מרעיון קליני לפתרון,1,elective,"[""""entrepreneurship""""]",FALSE,684b5153efd6147ccbbb6f80,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+336022,מתא לרקמה,2.5,mandatory,[],FALSE,684b4a100f83407d0c4c586d,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360326,ניתוח נתונים ושערוך פרמטרים,2.5,elective,"[""""imaging_signals"""",""""biomechanics_flow"""",""""tissue_biomaterials"""",""""medical_biophysics""""]",FALSE,684b5153efd6147ccbbb6f2f,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360021,ננו-חלקיקים בביולוגיה מכניקה וריאולוגיה,2.5,elective,"[""""biomechanics_flow"""",""""tissue_biomaterials"""",""""medical_biophysics""""]",FALSE,684b4c3801e810ca5e3f2456,12/06/2025 21:52,12/06/2025 21:52,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360021,ננו-חלקיקים בביולוגיה מכניקה וריאולוגיה,2.5,elective,"[""""biomechanics_flow"""",""""tissue_biomaterials"""",""""medical_biophysics""""]",FALSE,684b4f066236d9fe79c4533d,12/06/2025 22:04,12/06/2025 22:04,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+0460201,עיבוד אותות אקראיים,3,elective,"[""""imaging_signals""""]",FALSE,684b502d507a33a5415655ca,12/06/2025 22:09,12/06/2025 22:09,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+0460745,עיבוד דיגיטלי של אותות,3,elective,"[""""imaging_signals""""]",FALSE,684b4c3801e810ca5e3f244e,12/06/2025 21:52,12/06/2025 21:52,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+0460200,עיבוד וניתוח תמונות,3,elective,"[""""imaging_signals""""]",FALSE,684b4c3801e810ca5e3f244a,12/06/2025 21:52,12/06/2025 21:52,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+0460745,עיבוד ספרתי של אותות,3,elective,"[""""imaging_signals""""]",FALSE,684b4f066236d9fe79c45335,12/06/2025 22:04,12/06/2025 22:04,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360207,עיבוד תמונות רפואיות (עת״ר),3,elective,"[""""imaging_signals""""]",TRUE,684b5153efd6147ccbbb6f2d,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360538,עקרונות ביו-רפואיים לחישת מולקולות,2.5,elective,"[""""imaging_signals"""",""""tissue_biomaterials"""",""""medical_biophysics""""]",FALSE,684b4c3801e810ca5e3f243c,12/06/2025 21:52,12/06/2025 21:52,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360502,עקרונות הדמיה,2.5,elective,"[""""imaging_signals"""",""""medical_biophysics""""]",FALSE,684b5153efd6147ccbbb6f30,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360521,עקרונות הנדסיים של מע׳ קרדיו,3.5,elective,"[""""imaging_signals"""",""""biomechanics_flow"""",""""tissue_biomaterials"""",""""medical_biophysics""""]",FALSE,684b4c3801e810ca5e3f243a,12/06/2025 21:52,12/06/2025 21:52,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360504,עקרונות תהודת מגנטית,2,elective,"[""""imaging_signals"""",""""medical_biophysics""""]",FALSE,684b4c3801e810ca5e3f2439,12/06/2025 21:52,12/06/2025 21:52,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+0540413,פולימרים ויישומיהם בביוטכנולוגיה,2.5,elective,"[""""tissue_biomaterials""""]",FALSE,684b5153efd6147ccbbb6f64,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+104215,פונקציות מרוכבות א',2.5,mandatory,[],FALSE,684b4431efd6147ccbbb6923,12/06/2025 21:18,12/06/2025 21:18,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+336100,פיזיולוגיה למהנדסים,3.5,mandatory,[],FALSE,684b4a100f83407d0c4c586e,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+274253,פיזיולוגיה תאית,4,mandatory,[],FALSE,684b4a100f83407d0c4c5888,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+114071,פיזיקה 1מ,3.5,mandatory,[],FALSE,684b4a100f83407d0c4c5854,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+114074,פיזיקה 1פ,5,mandatory,[],FALSE,684b4a100f83407d0c4c5875,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+114052,פיזיקה 2,3.5,mandatory,[],FALSE,684b4a100f83407d0c4c585a,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+114076,פיזיקה 2פ,5,mandatory,[],FALSE,684b4a100f83407d0c4c5877,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+114036,פיזיקה סטטיסטית ותרמית,5,mandatory,[],FALSE,684b4a100f83407d0c4c587c,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+1140036,פיזיקה סטטיסטית ותרמית,5,elective,"[""""medical_biophysics""""]",FALSE,684b5153efd6147ccbbb6f6f,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+115203,פיזיקה קוונטית 1,5,mandatory,[],FALSE,684b4a100f83407d0c4c587d,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+115204,פיזיקה קוונטית 2,5,mandatory,[],FALSE,684b4a100f83407d0c4c5881,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+336100,פיסיולוגיה למהנדסים,3.5,mandatory,[],FALSE,684b4431efd6147ccbbb6932,12/06/2025 21:18,12/06/2025 21:18,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+114071,פיסיקה 1מ',3.5,mandatory,[],FALSE,684b4431efd6147ccbbb6918,12/06/2025 21:18,12/06/2025 21:18,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+114052,פיסיקה 2,3.5,mandatory,[],FALSE,684b4431efd6147ccbbb691e,12/06/2025 21:18,12/06/2025 21:18,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+114036,פיסיקה סטטיסטית ותרמית,5,elective,"[""""medical_biophysics""""]",FALSE,684b4431efd6147ccbbb696a,12/06/2025 21:18,12/06/2025 21:18,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+2360333,פרויקט באינטרנט של הדברים,3,elective,"[""""biomechanics_flow""""]",FALSE,684b5153efd6147ccbbb6f5e,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+334014,פרויקט בהנדסה ביו-רפואית 1,4,mandatory,[],FALSE,684b4431efd6147ccbbb6935,12/06/2025 21:18,12/06/2025 21:18,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+335015,פרויקט בהנדסה ביו-רפואית 2,3,mandatory,[],FALSE,684b4431efd6147ccbbb6937,12/06/2025 21:18,12/06/2025 21:18,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3340305,פרויקט מחקרי למצטיינים,4,faculty_elective,[],FALSE,684b5153efd6147ccbbb6f78,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3350016,פרויקט קליני הנדסי,1.5,faculty_elective,[],FALSE,684b5153efd6147ccbbb6f7a,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+0660333,פרמקו-ביו,2.5,elective,"[""""tissue_biomaterials""""]",FALSE,684b4a100f83407d0c4c58be,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+MALAG1,"קורס העשרה מל""ג 1",2,general,[],FALSE,684b4431efd6147ccbbb6975,12/06/2025 21:18,12/06/2025 21:18,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+MALAG2,"קורס העשרה מל""ג 2",2,general,[],FALSE,684b4431efd6147ccbbb6976,12/06/2025 21:18,12/06/2025 21:18,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+MALAG3,"קורס העשרה מל""ג 3",2,general,[],FALSE,684b4431efd6147ccbbb6977,12/06/2025 21:18,12/06/2025 21:18,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+SPORT1,קורס ספורט 1,1,general,[],FALSE,684b3f80efd6147ccbbb66c6,12/06/2025 20:58,12/06/2025 20:58,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+SPORT2,קורס ספורט 2,1,general,[],FALSE,684b3f80efd6147ccbbb66c7,12/06/2025 20:58,12/06/2025 20:58,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+SPORT3,קורס ספורט 3,0,general,[],FALSE,684b4a100f83407d0c4c58f2,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+0360072,קינמטיקה בביומכניקה ורובוטיקה,3,elective,"[""""biomechanics_flow""""]",FALSE,684b5153efd6147ccbbb6f58,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360001,רגולציה ומחקר קליני במכשור רפואי,2,faculty_elective,[],FALSE,684b5153efd6147ccbbb6f7b,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360545,רפואה גרעינית ורדיותרפיה,2,elective,"[""""imaging_signals"""",""""medical_biophysics""""]",FALSE,684b5153efd6147ccbbb6f3c,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+0360049,רשתות עצביות לבקרה ודיאגנוסטיקה,2.5,elective,"[""""biomechanics_flow""""]",FALSE,684b5153efd6147ccbbb6f57,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360528,שחרור מבוקר של תרופות,2.5,elective,"[""""tissue_biomaterials""""]",FALSE,684b5153efd6147ccbbb6f60,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360208,שיטות באנליזה של אותות ביולוגיים,3,elective,"[""""imaging_signals""""]",FALSE,684b5153efd6147ccbbb6f2e,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360536,שיטות במדעי העצב,2.5,elective,"[""""imaging_signals"""",""""medical_biophysics""""]",FALSE,684b5153efd6147ccbbb6f38,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+0460197,שיטות חישוביות באופטימיזציה,3,elective,"[""""imaging_signals""""]",FALSE,684b502d507a33a5415655c8,12/06/2025 22:09,12/06/2025 22:09,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+0350199,שימוש המחשב בתורת הזרימה,3,elective,"[""""biomechanics_flow""""]",FALSE,684b5153efd6147ccbbb6f56,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360520,שתלים אורטופדיים ותחליפי רקמה,2.5,elective,"[""""biomechanics_flow"""",""""tissue_biomaterials""""]",FALSE,684b5153efd6147ccbbb6f54,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360520,שתלים אורתופדיים ותחליפי רקמה,2.5,elective,"[""""biomechanics_flow"""",""""tissue_biomaterials""""]",FALSE,684b4c3801e810ca5e3f2457,12/06/2025 21:52,12/06/2025 21:52,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360020,תופעות ביו-חשמליות,2.5,elective,"[""""imaging_signals"""",""""medical_biophysics""""]",TRUE,684b5153efd6147ccbbb6f2c,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+044105,תורת המעגלים החשמליים,4,mandatory,[],FALSE,684b4a100f83407d0c4c585d,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+2160020,תיאוריה ופרקטיקה – דימוי מוח,2.5,faculty_elective,[],FALSE,684b4c3801e810ca5e3f2482,12/06/2025 21:52,12/06/2025 21:52,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360402,תכן ביו-חומרים,2.5,elective,"[""""tissue_biomaterials"""",""""medical_biophysics""""]",TRUE,684b5153efd6147ccbbb6f5f,12/06/2025 22:14,12/06/2025 22:14,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+335010,תכן ביומכני בסיסי,3,mandatory,[],FALSE,684b4a100f83407d0c4c586c,12/06/2025 21:43,12/06/2025 21:43,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
+3360540,תכן מכשור רפואי ממוחשב,2.5,elective,"[""""imaging_signals"""",""""biomechanics_flow""""]",FALSE,684b502d507a33a5415655bc,12/06/2025 22:09,12/06/2025 22:09,684b01f9fc0c7184ae28c3b1,ranbenayoun@gmail.com,FALSE
