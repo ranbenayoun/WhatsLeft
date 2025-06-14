@@ -1,0 +1,45 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { createPageUrl } from '@/utils';
+import { Button } from '@/components/ui/button';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { ListChecks, ArrowLeft } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+export default function HomePage() {
+  const navigate = useNavigate();
+
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-4 text-center" dir="rtl">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="max-w-3xl mx-auto"
+      >
+        <h1 className="text-4xl md:text-5xl font-extrabold text-bme-blue mb-4">
+          תכנון התואר שלך בהנדסה ביו-רפואית
+        </h1>
+        <p className="text-lg md:text-xl text-slate-600 mb-12">
+          קבל תמונה ברורה של ההתקדמות האקדמית שלך, תכנן את קורסי הבחירה וודא שאתה בדרך הנכונה לסיום התואר.
+          בחר את מסלול הלימודים שלך, סמן את הקורסים שהשלמת, והמערכת תציג לך דוח התקדמות מפורט.
+        </p>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        <Button 
+          size="lg" 
+          className="h-14 px-8 text-xl technion-gradient text-white shadow-lg hover:shadow-xl hover:opacity-90 transition-all duration-300"
+          onClick={() => navigate(createPageUrl('ManualSelection'))}
+        >
+          התחל תכנון
+          <ArrowLeft className="mr-3 w-6 h-6" />
+        </Button>
+      </motion.div>
+    </div>
+  );
+}
