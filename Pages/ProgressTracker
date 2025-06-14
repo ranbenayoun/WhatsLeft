@@ -1,0 +1,370 @@
+
+import React, { useState, useEffect } from 'react';
+import { StudentCourse } from '@/entities/StudentCourse';
+import { User } from '@/entities/User';
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
+import { Progress } from '@/components/ui/progress';
+import { Button } from '@/components/ui/button';
+import { Loader2, CheckCircle, Target, Book, AlertTriangle, Trophy, Dumbbell, Star } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { useCourses } from '@/components/CourseProvider';
+
+const MAJORS = {
+  imaging_signals: "הדמיה ואותות רפואיים",
+  biomechanics_flow: "ביומכניקה וזרימה",
+  tissue_biomaterials: "הנדסת רקמות וביו-חומרים",
+  medical_biophysics: "ביופיזיקה רפואית"
+};
+
+const TRACK_REQUIREMENTS = {
+    bme_only: {
+        total_credits: 160.0,
+        elective_majors_required: 2,
+        elective_courses_per_major: 5,
+        core_courses_per_major: 2,
+        bme_faculty_electives_required: 8,
+    },
+    bme_physics: {
+        total_credits: 178.0,
+        elective_majors_required: 1, // Example, adjust as per syllabus
+        elective_courses_per_major: 5, // Example, adjust
+        core_courses_per_major: 2, // Example, adjust
+        bme_faculty_electives_required: 5, // Example, adjust
+    },
+    bme_medicine: {
+        total_credits: 238.0, // Pre-clinical
+        elective_majors_required: 1, // Example, adjust
+        elective_courses_per_major: 4, // Example, adjust
+        core_courses_per_major: 2, // Example, adjust
+        bme_faculty_electives_required: 5, // Example, adjust
+    }
+};
+
+// Course numbers for different tracks - Updated with complete lists
+const BME_ONLY_MANDATORY = [
+    '044102', '104065', '104042', '114071', '125001', '134058', 
+    '104013', '104038', '104136', '114052', '124801', '234128',
+    '044105', '104214', '104215', '104220', '124503', '134019', '334274', 
+    '044131', '104034', '334221', '334222', '336537',
+    '134113', '334009', '334011', '335010', '336022', '336100', 
+    '334023', '335001', '334014', '335002', '335015', '335003'
+];
+
+const BME_PHYSICS_MANDATORY = [
+    '044102', '104065', '104042', '114074', '125001', '134058', '114020',
+    '104013', '104038', '104136', '114076', '124801', '234128',
+    '044105', '104214', '104215', '104220', '114021', '114086', '134019', '334274',
+    '044131', '104034', '114035', '334222', '336537',
+    '114101', '334009', '334011', '335010', '336100', 
+    '114036', '115203', '334023', '335005', '336533', 
+    '114037', '115204', '334014', '335003', '114246', '335015'
+];
+
+const BME_MEDICINE_MANDATORY = [
+    '044102', '104065', '104042', '114071', '124507', '274167',
+    '104013', '104038', '104136', '114052', '125803', '234128',
+    '044105', '104214', '104215', '104220', '274241', '274257',
+    '044131', '104034', '334222', '274253', '274266',
+    '334009', '334011', '335010', '274142', '274323', '274348',
+    '334023', '334221', '335001', '274143', '274165', '274262', '274268', '274320',
+    '334014', '335003', '274234', '274242', '274260', '274243', '274231', 
+    '335015', '274235', '274246', '274261', '274265', '274267'
+];
+
+const getMandatoryCoursesForTrack = (courses, track) => {
+    let mandatoryNumbers;
+    if (track === 'bme_physics') mandatoryNumbers = BME_PHYSICS_MANDATORY;
+    else if (track === 'bme_medicine') mandatoryNumbers = BME_MEDICINE_MANDATORY;
+    else mandatoryNumbers = BME_ONLY_MANDATORY;
+
+    return courses.filter(c => mandatoryNumbers.includes(c.course_number));
+};
+
+export default function ProgressTrackerPage() {
+  const { courses: allCourses, isLoading: areCoursesLoading } = useCourses();
+  const [user, setUser] = useState(null);
+  const [completedCourses, setCompletedCourses] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isRecommending, setIsRecommending] = useState(false);
+
+  useEffect(() => {
+    async function loadData() {
+      setIsLoading(true);
+      try {
+        const [userData, studentCoursesData] = await Promise.all([
+          User.me(),
+          StudentCourse.list()
+        ]);
+        setUser(userData);
+        setCompletedCourses(studentCoursesData.map(sc => sc.course_number));
+      } catch (error) {
+        console.error("Failed to load data:", error);
+      }
+      setIsLoading(false);
+    }
+    loadData();
+  }, []);
+  
+  const recommendMajors = async () => {
+    setIsRecommending(true);
+    
+    const electiveCoursesCompleted = allCourses.filter(c => 
+      c.course_type === 'elective' && completedCourses.includes(c.course_number)
+    );
+
+    const majorScores = {};
+    for (const majorKey in MAJORS) {
+      majorScores[majorKey] = 0;
+    }
+
+    electiveCoursesCompleted.forEach(course => {
+      course.majors.forEach(majorKey => {
+        if (majorScores.hasOwnProperty(majorKey)) {
+          majorScores[majorKey] += 1;
+        }
+      });
+    });
+
+    const sortedMajors = Object.keys(majorScores).sort((a, b) => majorScores[b] - majorScores[a]);
+    const recommended = sortedMajors.slice(0, 2);
+
+    await User.updateMyUserData({ chosen_majors: recommended });
+    setUser(prev => ({ ...prev, chosen_majors: recommended }));
+    
+    setIsRecommending(false);
+  };
+  
+  if (areCoursesLoading || isLoading) {
+    return <div className="flex justify-center items-center h-screen"><Loader2 className="h-8 w-8 animate-spin" /></div>;
+  }
+  
+  const studyTrack = user?.study_track || 'bme_only';
+  const requirements = TRACK_REQUIREMENTS[studyTrack];
+  
+  const biodesignProjectCourses = ['336024', '336025'];
+  const regularProjectCourses = ['334014', '335015'];
+  const completedBiodesign = biodesignProjectCourses.every(c => completedCourses.includes(c));
+
+  let allMandatoryForTrack = getMandatoryCoursesForTrack(allCourses, studyTrack);
+  if (completedBiodesign) {
+      allMandatoryForTrack = allMandatoryForTrack.filter(c => !regularProjectCourses.includes(c.course_number));
+  }
+  
+  const remainingMandatory = allMandatoryForTrack.filter(c => !completedCourses.includes(c.course_number));
+  
+  const MajorProgressCard = ({ majorKey }) => {
+    const majorCourses = allCourses.filter(c => c.course_type === 'elective' && c.majors && c.majors.includes(majorKey));
+    const completedInMajor = majorCourses.filter(c => completedCourses.includes(c.course_number));
+    
+    const completedCore = completedInMajor.filter(c => c.is_core_in_major).length;
+    const completedTotal = completedInMajor.length;
+
+    const coreCoursesRequired = requirements.core_courses_per_major;
+    const totalCoursesRequired = requirements.elective_courses_per_major;
+
+    const remainingCore = Math.max(0, coreCoursesRequired - completedCore);
+    const remainingTotal = Math.max(0, totalCoursesRequired - completedTotal);
+
+    return (
+      <Card>
+        <CardHeader>
+          <CardTitle>{MAJORS[majorKey]}</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div>
+            <div className="flex justify-between mb-1">
+              <span>קורסי ליבה</span>
+              <span className="tabular-nums">{completedCore}/{coreCoursesRequired}</span>
+            </div>
+            <Progress value={(completedCore / coreCoursesRequired) * 100} />
+            <p className="text-sm text-slate-600 mt-1">נותרו {remainingCore} קורסי ליבה.</p>
+          </div>
+          <div>
+            <div className="flex justify-between mb-1">
+              <span>סך הכל קורסים במגמה</span>
+              <span className="tabular-nums">{completedTotal}/{totalCoursesRequired}</span>
+            </div>
+            <Progress value={(completedTotal / totalCoursesRequired) * 100} />
+            <p className="text-sm text-slate-600 mt-1">נותרו {remainingTotal} קורסים.</p>
+          </div>
+        </CardContent>
+      </Card>
+    );
+  };
+
+  const EntrepreneurshipProgressCard = () => {
+      const entreCourses = allCourses.filter(c => c.majors && c.majors.includes('entrepreneurship'));
+      const completedEntre = entreCourses.filter(c => completedCourses.includes(c.course_number));
+      // As per PDF, 10 points required, 5 count towards degree.
+      const requiredPoints = 10;
+      const completedPoints = completedEntre.reduce((sum, c) => sum + (c.credits || 0), 0); // Ensure credits are numbers
+
+      return (
+          <Card className="bg-amber-50 border-amber-200">
+              <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                      <Trophy className="w-6 h-6 text-amber-600"/>
+                      מגמת יזמות
+                  </CardTitle>
+              </CardHeader>
+              <CardContent>
+                  <div className="flex justify-between mb-1">
+                      <span>נקודות זכות שהושלמו</span>
+                      <span className="tabular-nums">{completedPoints}/{requiredPoints}</span>
+                  </div>
+                  <Progress value={(completedPoints / requiredPoints) * 100} className="[&>*]:bg-amber-500" />
+                  <p className="text-sm text-slate-600 mt-2">
+                      נותרו {Math.max(0, requiredPoints - completedPoints)} נקודות להשלמת דרישות המגמה.
+                  </p>
+              </CardContent>
+          </Card>
+      )
+  }
+
+  const GeneralCoursesProgressCard = () => {
+      const sportCourses = allCourses.filter(c => c.course_number.startsWith('SPORT'));
+      const malagCourses = allCourses.filter(c => c.course_number.startsWith('MALAG'));
+      
+      const completedSport = sportCourses.filter(c => completedCourses.includes(c.course_number)).length;
+      const completedMalag = malagCourses.filter(c => completedCourses.includes(c.course_number)).length;
+
+      return (
+          <Card>
+              <CardHeader>
+                  <CardTitle className="flex items-center gap-2 text-2xl">
+                      <Dumbbell className="w-6 h-6 text-fuchsia-600"/>
+                      קורסים כלליים
+                  </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                  <div>
+                      <div className="flex justify-between mb-1">
+                          <span>קורסי ספורט</span>
+                          <span className="tabular-nums">{completedSport}/2</span>
+                      </div>
+                      <Progress value={(completedSport/2) * 100} className="[&>*]:bg-fuchsia-500" />
+                  </div>
+                  <div>
+                      <div className="flex justify-between mb-1">
+                          <span>קורסי העשרה (מל"ג)</span>
+                          <span className="tabular-nums">{completedMalag}/3</span>
+                      </div>
+                      <Progress value={(completedMalag/3) * 100} className="[&>*]:bg-teal-500" />
+                  </div>
+              </CardContent>
+          </Card>
+      )
+  }
+
+  // Calculate completed credits without duplicates
+  const uniqueCompletedCourses = Array.from(new Set(completedCourses))
+    .map(courseNumber => allCourses.find(c => c.course_number === courseNumber))
+    .filter(Boolean);
+  
+  const completedCredits = uniqueCompletedCourses.reduce((sum, course) => sum + (course.credits || 0), 0);
+  const completedFacultyElectives = uniqueCompletedCourses.filter(c => 
+    c.course_number.startsWith('33') && c.course_type !== 'mandatory'
+  ).length;
+
+
+  return (
+    <div className="max-w-7xl mx-auto p-4 md:p-8 space-y-8" dir="rtl">
+      <h1 className="text-4xl font-bold text-slate-800">דוח התקדמות אקדמית</h1>
+      
+       <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2 text-2xl">
+            <Trophy className="w-6 h-6 text-bme-yellow" />
+            <span>סיכום התקדמות כוללת</span>
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="grid md:grid-cols-2 gap-6">
+            <div>
+              <div className="flex justify-between mb-1 font-medium">
+                <span>סה"כ נקודות זכות</span>
+                <span className="tabular-nums">{completedCredits.toFixed(1)} / {requirements.total_credits.toFixed(1)}</span>
+              </div>
+              <Progress value={(completedCredits / requirements.total_credits) * 100} />
+              <p className="text-sm text-slate-500 mt-1">התקדמות להשלמת התואר במסלול</p>
+            </div>
+            <div>
+              <div className="flex justify-between mb-1 font-medium">
+                <span>קורסי בחירה פקולטיים</span>
+                <span className="tabular-nums">{completedFacultyElectives} / {requirements.bme_faculty_electives_required}</span>
+              </div>
+              <Progress value={(completedFacultyElectives / requirements.bme_faculty_electives_required) * 100} />
+              <p className="text-sm text-slate-500 mt-1">נדרשים לפחות {requirements.bme_faculty_electives_required} קורסי בחירה מהפקולטה (33xxxx)</p>
+            </div>
+        </CardContent>
+      </Card>
+
+      {/* Mandatory Courses */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2 text-2xl">
+            <Book className="w-6 h-6 text-bme-blue" />
+            <span>קורסי חובה</span>
+          </CardTitle>
+          <CardDescription>
+            השלמת {allMandatoryForTrack.length - remainingMandatory.length} מתוך {allMandatoryForTrack.length} קורסי חובה.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Progress value={((allMandatoryForTrack.length - remainingMandatory.length) / allMandatoryForTrack.length) * 100} className="mb-4" />
+          {completedBiodesign && (
+              <Badge variant="secondary" className="mb-4 bg-blue-100 text-blue-800">
+                  פרויקט ביו-דיזיין מחליף את פרויקטי הגמר הרגילים.
+              </Badge>
+          )}
+          {remainingMandatory.length > 0 ? (
+            <div>
+              <h3 className="font-semibold mb-2">קורסים שנותרו:</h3>
+              <ul className="columns-2 md:columns-3 list-disc list-inside">
+                {remainingMandatory.map(c => <li key={c.id} className="text-sm text-slate-700">{c.name_hebrew} ({c.course_number})</li>)}
+              </ul>
+            </div>
+          ) : (
+            <p className="flex items-center gap-2 text-green-600 font-semibold">
+              <CheckCircle className="w-5 h-5" />
+              כל הכבוד! השלמת את כל קורסי החובה.
+            </p>
+          )}
+        </CardContent>
+      </Card>
+
+      {/* Elective Courses / Majors */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2 text-2xl">
+            <Target className="w-6 h-6 text-bme-cyan" />
+            <span>מגמות התמחות</span>
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          {user.chosen_majors && user.chosen_majors.length >= requirements.elective_majors_required ? (
+            <div className="grid md:grid-cols-2 gap-6">
+              {user.chosen_majors.map(majorKey => <MajorProgressCard key={majorKey} majorKey={majorKey} />)}
+            </div>
+          ) : (
+            <div className="text-center p-8 bg-slate-50 rounded-lg">
+              <AlertTriangle className="w-12 h-12 text-amber-500 mx-auto mb-4" />
+              <h3 className="text-xl font-bold mb-2">לא נבחרו מספיק מגמות</h3>
+              <p className="text-slate-600 mb-4">
+                במסלול זה יש לבחור {requirements.elective_majors_required} מגמות התמחות.
+              </p>
+              <Button onClick={recommendMajors} disabled={isRecommending}>
+                {isRecommending ? <Loader2 className="h-5 w-5 animate-spin"/> : "הצע לי מגמות (מומלץ)"}
+              </Button>
+            </div>
+          )}
+        </CardContent>
+      </Card>
+
+      {/* Optional sections */}
+      <div className="grid md:grid-cols-2 gap-6">
+          {user.has_chosen_entrepreneurship && <EntrepreneurshipProgressCard />}
+          <GeneralCoursesProgressCard />
+      </div>
+    </div>
+  );
+}
