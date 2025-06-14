@@ -1,0 +1,57 @@
+{
+  "name": "Course",
+  "type": "object",
+  "properties": {
+    "course_number": {
+      "type": "string",
+      "description": "מספר הקורס"
+    },
+    "name_hebrew": {
+      "type": "string",
+      "description": "שם הקורס בעברית"
+    },
+    "credits": {
+      "type": "number",
+      "description": "נקודות זכות"
+    },
+    "course_type": {
+      "type": "string",
+      "enum": [
+        "mandatory",
+        "elective",
+        "general",
+        "faculty_elective"
+      ],
+      "description": "סוג הקורס: חובה, בחירה, כללי, בחירה פקולטית"
+    },
+    "majors": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "imaging_signals",
+          "biomechanics_flow",
+          "tissue_biomaterials",
+          "medical_biophysics",
+          "entrepreneurship"
+        ]
+      },
+      "description": "המגמות אליהן הקורס שייך"
+    },
+    "is_core_in_major": {
+      "type": "boolean",
+      "default": false,
+      "description": "האם זהו קורס ליבה במגמה (מודגש בסילבוס)"
+    },
+    "semester": {
+      "type": "number",
+      "description": "סמסטר מומלץ ללקיחה"
+    }
+  },
+  "required": [
+    "course_number",
+    "name_hebrew",
+    "credits",
+    "course_type"
+  ]
+}
