@@ -1,0 +1,38 @@
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import { Course } from '@/entities/Course';
+import { Loader2 } from 'lucide-react';
+
+const CourseContext = createContext({
+  courses: [],
+  isLoading: true,
+});
+
+export const useCourses = () => useContext(CourseContext);
+
+export const CourseProvider = ({ children }) => {
+  const [courses, setCourses] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadCourses() {
+      try {
+        // Fetch all courses, assuming less than 500 courses exist.
+        const allCourses = await Course.list(null, 500); 
+        setCourses(allCourses);
+      } catch (error) {
+        console.error("Failed to load courses in provider:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    loadCourses();
+  }, []); // Empty dependency array ensures this runs only once per application lifecycle.
+
+  const value = { courses, isLoading };
+
+  return (
+    <CourseContext.Provider value={value}>
+      {children}
+    </CourseContext.Provider>
+  );
+};
