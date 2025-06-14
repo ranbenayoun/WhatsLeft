@@ -1,0 +1,424 @@
+
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Course } from '@/entities/Course';
+import { StudentCourse } from '@/entities/StudentCourse';
+import { User } from '@/entities/User';
+import { Button } from '@/components/ui/button';
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Loader2, Star, GraduationCap, Dna, Atom } from 'lucide-react';
+import { createPageUrl } from '@/utils';
+import { Badge } from '@/components/ui/badge';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
+import { useCourses } from '@/components/CourseProvider';
+
+
+const MAJORS = {
+  imaging_signals: "הדמיה ואותות רפואיים",
+  biomechanics_flow: "ביומכניקה וזרימה",
+  tissue_biomaterials: "הנדסת רקמות וביו-חומרים",
+  medical_biophysics: "ביופיזיקה רפואית"
+};
+
+const SEMESTERS = {
+    1: 'שנה א - סמסטר 1', 2: 'שנה א - סמסטר 2',
+    3: 'שנה ב - סמסטר 3', 4: 'שנה ב - סמסטר 4',
+    5: 'שנה ג - סמסטר 5', 6: 'שנה ג - סמסטר 6',
+    7: 'שנה ד - סמסטר 7', 8: 'שנה ד - סמסטר 8',
+};
+
+const YEARS = {
+    1: [1, 2], 2: [3, 4], 3: [5, 6], 4: [7, 8]
+};
+
+const TRACKS = {
+  bme_only: { label: "הנדסה ביו-רפואית", icon: <GraduationCap/> },
+  bme_physics: { label: "משולב עם פיזיקה", icon: <Atom/> },
+  bme_medicine: { label: "משולב עם רפואה", icon: <Dna/> }
+}
+
+// Course numbers for different tracks - Updated with complete lists
+const BME_ONLY_MANDATORY = [
+    '044102', '104065', '104042', '114071', '125001', '134058',
+    '104013', '104038', '104136', '114052', '124801', '234128',
+    '044105', '104214', '104215', '104220', '124503', '134019', '334274',
+    '044131', '104034', '334221', '334222', '336537',
+    '134113', '334009', '334011', '335010', '336022', '336100',
+    '334023', '335001', '334014', '335002', '335015', '335003'
+];
+
+const BME_PHYSICS_MANDATORY = [
+    '044102', '104065', '104042', '114074', '125001', '134058', '114020',
+    '104013', '104038', '104136', '114076', '124801', '234128',
+    '044105', '104214', '104215', '104220', '114021', '114086', '134019', '334274',
+    '044131', '104034', '114035', '334222', '336537',
+    '114101', '334009', '334011', '335010', '336100',
+    '114036', '115203', '334023', '335005', '336533',
+    '114037', '115204', '334014', '335003', '114246', '335015'
+];
+
+const BME_MEDICINE_MANDATORY = [
+    '044102', '104065', '104042', '114071', '124507', '274167',
+    '104013', '104038', '104136', '114052', '125803', '234128',
+    '044105', '104214', '104215', '104220', '274241', '274257',
+    '044131', '104034', '334222', '274253', '274266',
+    '334009', '334011', '335010', '274142', '274323', '274348',
+    '334023', '334221', '335001', '274143', '274165', '274262', '274268', '274320',
+    '334014', '335003', '274234', '274242', '274260', '274243', '274231',
+    '335015', '274235', '274246', '274261', '274265', '274267'
+];
+
+const getMandatoryCoursesForTrack = (courses, track) => {
+    let mandatoryNumbers;
+    if (track === 'bme_physics') mandatoryNumbers = BME_PHYSICS_MANDATORY;
+    else if (track === 'bme_medicine') mandatoryNumbers = BME_MEDICINE_MANDATORY;
+    else mandatoryNumbers = BME_ONLY_MANDATORY;
+
+    return courses.filter(c => mandatoryNumbers.includes(c.course_number));
+};
+
+export default function ManualSelectionPage() {
+  const { courses, isLoading: areCoursesLoading } = useCourses();
+  const [isLoading, setIsLoading] = useState(true);
+  const [selectedCourses, setSelectedCourses] = useState(new Set());
+  const [selectedMajors, setSelectedMajors] = useState([]);
+  const [isSaving, setIsSaving] = useState(false);
+  const [selectedEntrepreneurship, setSelectedEntrepreneurship] = useState(false);
+  const [studyTrack, setStudyTrack] = useState('bme_only');
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    async function fetchData() {
+      setIsLoading(true);
+      try {
+        const [user, studentCoursesData] = await Promise.all([
+            User.me(),
+            StudentCourse.list()
+        ]);
+        
+        if (user) {
+            setStudyTrack(user.study_track || 'bme_only');
+            setSelectedMajors(user.chosen_majors || []);
+            setSelectedEntrepreneurship(user.has_chosen_entrepreneurship || false);
+        }
+
+        if (studentCoursesData) {
+            const initialSelected = new Set(studentCoursesData.map(sc => sc.course_number));
+            setSelectedCourses(initialSelected);
+        }
+      } catch(error) {
+        console.error("Failed to load user and student course data", error);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    fetchData();
+  }, []);
+
+  const handleCourseToggle = (courseNumber) => {
+    setSelectedCourses(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(courseNumber)) {
+        newSet.delete(courseNumber);
+      } else {
+        newSet.add(courseNumber);
+      }
+      return newSet;
+    });
+  };
+
+  const handleMajorToggle = (majorKey) => {
+    setSelectedMajors(prev => {
+      if (prev.includes(majorKey)) {
+        return prev.filter(m => m !== majorKey);
+      }
+      if (prev.length < 2) {
+        return [...prev, majorKey];
+      }
+      return prev;
+    });
+  };
+  
+  const handleYearToggle = (year) => {
+      const semestersToToggle = YEARS[year];
+      // Filter mandatory courses for the current track and year
+      const currentTrackMandatoryCourses = getMandatoryCoursesForTrack(courses, studyTrack);
+      const coursesInYear = currentTrackMandatoryCourses.filter(c => semestersToToggle.includes(c.semester));
+      const courseNumbersInYear = coursesInYear.map(c => c.course_number);
+      
+      const allSelected = courseNumbersInYear.every(cn => selectedCourses.has(cn));
+
+      setSelectedCourses(prev => {
+          const newSet = new Set(prev);
+          if (allSelected) {
+              courseNumbersInYear.forEach(cn => newSet.delete(cn));
+          } else {
+              courseNumbersInYear.forEach(cn => newSet.add(cn));
+          }
+          return newSet;
+      });
+  };
+
+  const handleSaveAndAnalyze = async () => {
+    setIsSaving(true);
+    try {
+      // Clear previous courses & majors
+      const existingCourses = await StudentCourse.list();
+      await Promise.all(existingCourses.map(c => StudentCourse.delete(c.id)));
+      
+      await User.updateMyUserData({ 
+          chosen_majors: selectedMajors,
+          has_chosen_entrepreneurship: selectedEntrepreneurship,
+          study_track: studyTrack
+      });
+
+      // Create new student courses
+      if (selectedCourses.size > 0) {
+        const studentCourses = Array.from(selectedCourses).map(course_number => ({
+          course_number,
+          status: 'completed'
+        }));
+        await StudentCourse.bulkCreate(studentCourses);
+      }
+      
+      navigate(createPageUrl('ProgressTracker'));
+    } catch (error) {
+      console.error("Error saving selection:", error);
+      // Potentially add a user-facing error message here
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  const mandatoryCourses = getMandatoryCoursesForTrack(courses, studyTrack);
+  const electiveCourses = courses.filter(c => c.course_type === 'elective');
+  const generalCourses = courses.filter(c => c.course_type === 'general');
+  const generalFacultyElectives = courses.filter(c => c.course_type === 'faculty_elective');
+
+
+  const groupedMandatory = mandatoryCourses.reduce((acc, course) => {
+    const sem = course.semester || 0;
+    if (!acc[sem]) acc[sem] = [];
+    if (!acc[sem].find(c => c.course_number === course.course_number)) { // Prevent duplicates
+        acc[sem].push(course);
+    }
+    return acc;
+  }, {});
+
+  const groupedElectives = {};
+  for (const majorKey in MAJORS) {
+      const coursesInMajor = electiveCourses.filter(c => c.majors && c.majors.includes(majorKey));
+      const uniqueCourses = Array.from(new Map(coursesInMajor.map(c => [c.course_number, c])).values());
+      uniqueCourses.sort((a, b) => (b.is_core_in_major ? 1 : 0) - (a.is_core_in_major ? 1 : 0));
+      groupedElectives[majorKey] = uniqueCourses;
+  }
+
+  // Get unique entrepreneurship courses
+  const entrepreneurshipCourses = Array.from(new Map(
+    courses.filter(c => c.majors && c.majors.includes('entrepreneurship'))
+           .map(c => [c.course_number, c])
+  ).values());
+
+  // Get unique general courses 
+  const uniqueGeneralCourses = Array.from(new Map(
+    generalCourses.map(c => [c.course_number, c])
+  ).values());
+
+  // Get unique faculty electives
+  const uniqueFacultyElectives = Array.from(new Map(
+    generalFacultyElectives.map(c => [c.course_number, c])
+  ).values());
+
+
+  if (areCoursesLoading || isLoading) {
+    return <div className="flex justify-center items-center h-screen"><Loader2 className="h-8 w-8 animate-spin" /></div>;
+  }
+
+  return (
+    <div className="max-w-4xl mx-auto p-4 md:p-8" dir="rtl">
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-3xl font-bold">בחירה ידנית של קורסים והתמחויות</CardTitle>
+          <CardDescription>
+            <div className="space-y-2">
+              <p>סמן את הקורסים שהשלמת ובחר את מסלול והתמחויות הלימוד שלך.</p>
+              <div className="bg-blue-50 p-3 rounded-lg text-sm">
+                <strong>לא חובה לבחור מגמות מראש!</strong> ניתן להתקדם גם בלי לבחור מגמות התמחות עכשיו. 
+                המערכת תנתח את קורסי הבחירה שביצעת ותמליץ על המגמות המתאימות ביותר עבורך.
+              </div>
+            </div>
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-8">
+          
+          <div className="space-y-4">
+            <h2 className="text-xl font-bold">1. בחירת מסלול לימודים</h2>
+             <RadioGroup dir="rtl" value={studyTrack} onValueChange={setStudyTrack} className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {Object.entries(TRACKS).map(([key, {label, icon}]) => (
+                   <Label key={key} htmlFor={key} className={`flex flex-col items-center justify-center p-4 border-2 rounded-lg cursor-pointer transition-all ${studyTrack === key ? 'border-bme-blue bg-blue-50' : 'border-slate-300 hover:border-bme-cyan'}`}>
+                      <RadioGroupItem value={key} id={key} className="sr-only" />
+                      <div className="mb-2">{React.cloneElement(icon, {className: "w-8 h-8"})}</div>
+                      <span className="font-semibold">{label}</span>
+                   </Label>
+                ))}
+             </RadioGroup>
+          </div>
+
+          {/* Major Selection */}
+          <div className="space-y-4">
+            <h2 className="text-xl font-bold">2. בחירת מגמות התמחות (אופציונלי)</h2>
+            <p className="text-sm text-slate-600 mb-4">
+              בחר 2 מגמות התמחות, או דלג על השלב הזה ותן למערכת להמליץ לך על המגמות המתאימות ביותר.
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {Object.entries(MAJORS).map(([key, name]) => (
+                <div
+                  key={key}
+                  onClick={() => handleMajorToggle(key)}
+                  className={`p-4 border-2 rounded-lg cursor-pointer transition-all duration-200 ${
+                    selectedMajors.includes(key)
+                      ? 'border-bme-blue bg-blue-50'
+                      : 'border-slate-300 hover:border-bme-cyan'
+                  }`}
+                >
+                  <Checkbox
+                    checked={selectedMajors.includes(key)}
+                    readOnly
+                    className="mr-2"
+                  />
+                  <span className="font-medium">{name}</span>
+                </div>
+              ))}
+            </div>
+            {selectedMajors.length > 0 && (
+              <div className="text-sm text-slate-600">
+                נבחרו {selectedMajors.length} מתוך 2 מגמות
+              </div>
+            )}
+          </div>
+          
+          {/* Course Selection */}
+          <div className="space-y-4">
+            <h2 className="text-xl font-bold">3. סימון קורסים שהושלמו</h2>
+            <Accordion type="multiple" defaultValue={['mandatory']}>
+              <AccordionItem value="mandatory">
+                <AccordionTrigger className="text-lg font-semibold">קורסי חובה</AccordionTrigger>
+                <AccordionContent>
+                  <div className="p-4 space-y-6">
+                    {Object.entries(YEARS).map(([year, semesters]) => (
+                       <div key={year}>
+                         <div className="flex items-center space-x-2 space-x-reverse mb-4">
+                           <Checkbox id={`year-${year}`} checked={
+                               semesters.flatMap(sem => groupedMandatory[sem] || []).every(c => selectedCourses.has(c.course_number)) &&
+                               semesters.flatMap(sem => groupedMandatory[sem] || []).length > 0
+                             } onCheckedChange={() => handleYearToggle(year)} />
+                           <label htmlFor={`year-${year}`} className="text-md font-bold cursor-pointer">בחר הכל עבור שנה {['א','ב','ג','ד'][year-1]}</label>
+                         </div>
+                         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                          {semesters.flatMap(sem => groupedMandatory[sem] || []).map(course => (
+                            <div key={course.id} className="flex items-center space-x-2 space-x-reverse">
+                              <Checkbox id={course.course_number} checked={selectedCourses.has(course.course_number)} onCheckedChange={() => handleCourseToggle(course.course_number)} />
+                              <label htmlFor={course.course_number} className="text-sm font-medium leading-none cursor-pointer">
+                                {course.name_hebrew} ({course.course_number})
+                              </label>
+                            </div>
+                          ))}
+                         </div>
+                       </div>
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="electives">
+                <AccordionTrigger className="text-lg font-semibold">קורסי בחירה</AccordionTrigger>
+                <AccordionContent>
+                   <Accordion type="multiple">
+                    {Object.entries(groupedElectives).map(([majorKey, courses]) => (
+                      <AccordionItem value={majorKey} key={majorKey}>
+                        <AccordionTrigger>{MAJORS[majorKey]}</AccordionTrigger>
+                        <AccordionContent>
+                          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-4">
+                            {courses.map(course => (
+                              <div key={course.id} className="flex items-center space-x-2 space-x-reverse">
+                                <Checkbox id={course.course_number} checked={selectedCourses.has(course.course_number)} onCheckedChange={() => handleCourseToggle(course.course_number)} />
+                                <label htmlFor={course.course_number} className={`text-sm font-medium leading-none cursor-pointer flex items-center gap-1 ${course.is_core_in_major ? 'text-bme-blue' : ''}`}>
+                                  {course.is_core_in_major && <Star className="w-3 h-3 fill-current text-bme-yellow" />}
+                                  {course.name_hebrew} ({course.course_number})
+                                </label>
+                              </div>
+                            ))}
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="faculty_general">
+                 <AccordionTrigger className="text-lg font-semibold">בחירה פקולטית כללית</AccordionTrigger>
+                 <AccordionContent>
+                    <div className="p-4 grid grid-cols-2 md:grid-cols-3 gap-4">
+                         {uniqueFacultyElectives.map(course => (
+                             <div key={course.id} className="flex items-center space-x-2 space-x-reverse">
+                                 <Checkbox id={course.course_number} checked={selectedCourses.has(course.course_number)} onCheckedChange={() => handleCourseToggle(course.course_number)} />
+                                 <label htmlFor={course.course_number} className="text-sm font-medium leading-none cursor-pointer">
+                                     {course.name_hebrew} ({course.course_number})
+                                 </label>
+                             </div>
+                         ))}
+                    </div>
+                 </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="entrepreneurship">
+                 <AccordionTrigger className="text-lg font-semibold">מגמת יזמות (אופציונלי)</AccordionTrigger>
+                 <AccordionContent>
+                    <div className="p-4 space-y-4">
+                      <div className="flex items-center space-x-2 space-x-reverse">
+                         <Checkbox id="choose-yazamut" checked={selectedEntrepreneurship} onCheckedChange={setSelectedEntrepreneurship} />
+                         <label htmlFor="choose-yazamut" className="font-medium">אני רוצה לעקוב אחר מגמת יזמות</label>
+                      </div>
+                      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                         {entrepreneurshipCourses.map(course => (
+                             <div key={course.id} className="flex items-center space-x-2 space-x-reverse">
+                                 <Checkbox id={course.course_number} checked={selectedCourses.has(course.course_number)} onCheckedChange={() => handleCourseToggle(course.course_number)} />
+                                 <label htmlFor={course.course_number} className="text-sm font-medium leading-none cursor-pointer">
+                                     {course.name_hebrew} ({course.course_number})
+                                 </label>
+                             </div>
+                         ))}
+                      </div>
+                    </div>
+                 </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="general">
+                 <AccordionTrigger className="text-lg font-semibold">קורסים כלליים</AccordionTrigger>
+                 <AccordionContent>
+                    <div className="p-4 grid grid-cols-2 md:grid-cols-3 gap-4">
+                         {uniqueGeneralCourses.map(course => (
+                             <div key={course.id} className="flex items-center space-x-2 space-x-reverse">
+                                 <Checkbox id={course.course_number} checked={selectedCourses.has(course.course_number)} onCheckedChange={() => handleCourseToggle(course.course_number)} />
+                                 <label htmlFor={course.course_number} className="text-sm font-medium leading-none cursor-pointer">
+                                     {course.name_hebrew} ({course.course_number})
+                                 </label>
+                             </div>
+                         ))}
+                    </div>
+                 </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+
+          <Button onClick={handleSaveAndAnalyze} disabled={isSaving} className="w-full h-12 text-lg">
+            {isSaving ? <Loader2 className="h-5 w-5 animate-spin" /> : "שמור ונתח התקדמות"}
+          </Button>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
